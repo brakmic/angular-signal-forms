@@ -1,10 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { Control, form, required, submit } from '@angular/forms/signals';
+import { Control, form, required, schema, submit } from '@angular/forms/signals';
 
-interface AccountData {
+type AccountSchema = {
   username: string;
   password: string;
 }
+
+const accountSchema = schema<AccountSchema>((a) => {
+  required(a.username, { message: 'Username is required' });
+  required(a.password, { message: 'Password is required' });
+});
 
 @Component({
   selector: 'app-logon',
@@ -14,15 +19,13 @@ interface AccountData {
   styleUrl: './logon.css'
 })
 export class Logon {
-  public readonly accountData = signal<AccountData>({
+
+  public readonly accountData = signal<AccountSchema>({
     username: '',
     password: ''
   });
 
-  public readonly logonForm = form(this.accountData, (path) => {
-    required(path.username, { message: 'Username is required' });
-    required(path.password, { message: 'Password is required' });
-  });
+  public readonly logonForm = form(this.accountData, accountSchema);
 
   public readonly loginSuccess = signal(false);
 
