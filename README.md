@@ -10,6 +10,8 @@ This app shows how to use Angular signals for forms. It has validation, error me
 
 It uses only signal forms, no reactive forms. It shows validation errors as flyouts next to inputs. It shows success modals. It uses Angular v21 features.
 
+![demo](./public/assets/demo.gif)
+
 ## How to run
 
 ```bash
