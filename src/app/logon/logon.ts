@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { Control, form, required, submit } from '@angular/forms/signals';
+import { Field, form, required, submit } from '@angular/forms/signals';
 
 interface AccountData {
   username: string;
@@ -9,7 +9,7 @@ interface AccountData {
 @Component({
   selector: 'app-logon',
   standalone: true,
-  imports: [Control],
+  imports: [Field],
   templateUrl: './logon.html',
   styleUrl: './logon.css'
 })

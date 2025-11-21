@@ -30,7 +30,7 @@ pnpm test
 
 ## Tech
 
-- Angular v21.0.0-next.5 (experimental)
+- Angular v21.0.0 (stable)
 - Signal Forms API
 - Tailwind CSS v4 (because I never learned CSS/SCSS, and never will)
 - Jest for tests
